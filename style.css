@@ -1,0 +1,106 @@
+/* Reset și bază */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  background: #000;
+}
+
+/* Secțiune Hero */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Layere Parallax */
+.layer {
+  position: absolute;
+  pointer-events: none;
+  transition: transform 0.1s ease-out;
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+}
+
+/* Fundal natură */
+.background {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Nor */
+.cloud {
+  width: auto;
+  height: auto;
+  max-width: 25%;
+  top: 2%;
+  left: 70%;
+  z-index: 2;
+  opacity: 0.95;
+}
+
+/* Păsări */
+.birds {
+  width: auto;
+  height: auto;
+  max-width: 40%;
+  top: 0%;
+  left: 10%;
+  z-index: 3;
+}
+
+/* Text */
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 5%; 
+  transform: translateY(-50%);
+  z-index: 4;
+  text-align: left;
+  color: white;
+  padding: 2rem;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+  max-width: nowrap;
+}
+
+
+.hero-content h1 {
+  font-size: 3rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .cloud,
+  .birds {
+    max-width: 80%;
+    left: 10%;
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
